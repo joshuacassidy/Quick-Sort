@@ -1,10 +1,16 @@
 public class QuickSort<T extends Comparable<T>> {
 
-    public T[] sort(T[] arr, int p, int r) {
+    private T[] arr;
+
+    public QuickSort(T[] arr) {
+        this.arr = arr;
+    }
+
+    public T[] sort(int p, int r) {
         if (p < r) {
             int q = partition(arr, p, r);
-            sort(arr, p, q-1);
-            sort(arr, q+1, r);
+            sort(p, q-1);
+            sort(q+1, r);
         }
         return arr;
     }
