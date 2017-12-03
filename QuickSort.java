@@ -1,6 +1,6 @@
-public class QuickSort {
+public class QuickSort<T extends Comparable<T>> {
 
-    public int[] sort(int[] arr, int p, int r) {
+    public T[] sort(T[] arr, int p, int r) {
         if (p < r) {
             int q = partition(arr, p, r);
             sort(arr, p, q-1);
@@ -9,28 +9,27 @@ public class QuickSort {
         return arr;
     }
 
-    public int partition(int[] arr, int p, int r) {
-        int pivot = arr[r];
+    public int partition(T[] arr, int p, int r) {
+        T pivot = arr[r];
         int i = p-1;
         for (int j = p; j <= r-1; j++) {
-            if(arr[j] <= pivot) {
+            if(arr[j].compareTo(pivot) <= 0) {
                 i++;
                 swap(arr,i,j);
             }
         }
-
         swap(arr,i+1,r);
         return i+1;
     }
 
-    public void swap(int[] arr, int x, int y) {
-        int temp = arr[x];
+    public void swap(T[] arr, int x, int y) {
+        T temp = arr[x];
         arr[x] = arr[y];
         arr[y] = temp;
     }
 
-    public void traverse(int[] arr) {
-        for (int i: arr) {
+    public void traverse(T[] arr) {
+        for (T i: arr) {
             System.out.print(i + " ");
         }
     }
