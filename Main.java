@@ -1,7 +1,7 @@
 
 public class Main {
     public static void main(String[] args) {
-        int[] arr = { 12, 81, 74, 43, 1098, 0 ,8, 92, 17, 754, 912, 0, 6, 4};
+        int[] arr = { 10, 32, 128, 2345, 23, 1 ,23, 44, 243, 4, 5, 7, 6, 9};
         QuickSort quickSort = new QuickSort();
         quickSort.traverse(quickSort.sort(arr, 0, arr.length-1));
 

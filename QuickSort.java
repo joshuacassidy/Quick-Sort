@@ -15,16 +15,18 @@ public class QuickSort {
         for (int j = p; j <= r-1; j++) {
             if(arr[j] <= pivot) {
                 i++;
-                int temp = arr[i];
-                arr[i] = arr[j];
-                arr[j] = temp;
+                swap(arr,i,j);
             }
         }
 
-        int temp = arr[i+1];
-        arr[i+1] = arr[r];
-        arr[r] = temp;
+        swap(arr,i+1,r);
         return i+1;
+    }
+
+    public void swap(int[] arr, int x, int y) {
+        int temp = arr[x];
+        arr[x] = arr[y];
+        arr[y] = temp;
     }
 
     public void traverse(int[] arr) {
